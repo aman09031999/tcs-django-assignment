@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>ADD</title>
+
+</head>
+<body>
+
+    <div class="container">
+        <h1><center>Student Management System (SMS)</center></h1>
+        <hr>
+        <h1><center>ADD SERVICE</center></h1>
+
+        <h3 class="text-danger"><label>{{error}}</label></h3>
+
+        <form action="add" method="POST" >
+            {% csrf_token %}
+
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <b><label for="studentr_no">Enter Roll Number</label></b>
+                    <input type="number" name="r_no" class="form-control" id="r_no" placeholder="enter roll number" max_length=3 required/>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <b><label for="studentname">Enter Student Name</label></b>
+                    <input type="text" name="name" class="form-control" id="name" placeholder="enter student name" max_length=100 required/>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <b><label for="studentdob">Enter Student D.O.B.</label></b>
+                    <input type="date" name="dob" class="form-control" id="dob" placeholder="enter student d.o.b." required/>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <b><label for="studentmarks">Enter Student marks</label></b>
+                    <input type="number" name="marks" class="form-control" id="marks" placeholder="enter student marks" required/>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-success">ADD</button>
+            <button type="reset" class="btn btn-danger">RESET</button>
+        </form>
+    </div>
+
+</body>
+</html>

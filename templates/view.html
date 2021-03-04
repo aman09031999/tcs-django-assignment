@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>VIEW</title>
+
+</head>
+<body>
+
+    <div class="container">
+        <h1><center>Student Management System (SMS)</center></h1>
+        <hr>
+        <h1><center>VIEW SERVICE</center></h1>
+
+        <table class="table">
+            <thead class="thead-dark">
+            <tr>
+                <th scope="col">Roll No.</th>
+                <th scope="col">Name</th>
+                <th scope="col">D.O.B</th>
+                <th scope="col">Marks</th>
+                <th colspan="2"><center>OTHER OPERATIONS</center></th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for student in lis %}
+            <tr>
+                <td>{{student.r_no}}</td>
+                <td>{{student.name}}</td>
+                <td>{{student.dob}}</td>
+                <td>{{student.marks}}</td>
+                <td><center><a href="{{student.id}}/edit">UPDATE</a></center></td>
+                <td><center><a href="{{student.id}}/delete">DELETE</a></center></td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+        <br>
+
+        <a href="/sms">
+            <center>
+                <button type="submit" class="btn btn-info">HOME</button>
+            </center>
+        </a>
+    </div>
+
+</body>
+</html>
